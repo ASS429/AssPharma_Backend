@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: asspharma-backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: supabase
+          property: connectionString
